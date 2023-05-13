@@ -1,0 +1,16 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+<h2>Registrar conta</h2>
+
+<form method="post" class="form">
+    {% csrf_token %}
+    {{form}}
+    <div class="termos-de-uso", style="height: auto;">
+        <input type="checkbox" name="Termos de uso" id="termos" checked required>
+        Aceito os <a href="" style="margin-left: 5px;">Termos de uso </a>
+    </div>
+    <input type="submit" value="Cadastrar">
+</form>
+
+{% endblock %}

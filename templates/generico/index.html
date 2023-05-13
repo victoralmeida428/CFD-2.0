@@ -1,0 +1,41 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+<main>
+    <section class="sobre">
+        <h2>Sobre o projeto</h2>
+        <p>O Controle Financeiro é uma plataforma online que permite a seus usuários controlar suas finanças de forma fácil e intuitiva. Com ferramentas de monitoramento de receitas e despesas, investimentos e metas financeiras, o Controle Financeiro ajuda você a tomar decisões mais inteligentes sobre seu dinheiro.
+        <a href="{%url 'cadastro'%}" class="botao">Crie sua conta agora mesmo</a>
+        </p>
+    </section>
+    <section class="features">
+        <h2>Principais funcionalidades</h2>
+        <ul>
+            <li>Acesso online e seguro, a qualquer hora e em qualquer lugar</li>
+            <li>Cadastro de contas bancárias e cartões de crédito</li>
+            <li>Controle de receitas e despesas por categoria</li>
+            <li>Planejamento de orçamento mensal</li>
+            <li>Análise de investimentos e rendimentos</li>
+            <li>Relatórios personalizados em gráficos e tabelas</li>
+        </ul>
+    </section>
+    <section class="dicas">
+        <h2>Dicas de finanças pessoais</h2>
+        <ul>
+            <li>
+                <h3 >Organize suas finanças</h3>
+                <p>Antes de tomar qualquer decisão financeira, é importante que você conheça sua situação atual. Faça uma lista de todas as suas receitas e despesas, e estabeleça um orçamento para cada categoria.</p>
+            </li>
+            <li>
+                <h3>Evite dívidas desnecessárias</h3>
+                <p>Se possível, evite fazer dívidas com juros altos, como cartões de crédito e empréstimos pessoais. Caso precise recorrer a esses recursos, pesquise bastante antes de escolher a opção mais adequada.</p>
+            </li>
+            <li>
+                <h3>Invista em sua educação financeira</h3>
+                <p>Aprender mais sobre finanças pessoais pode ser um investimento valioso para o seu futuro. Leia livros, participe de cursos e palestras, e converse com profissionais da área para ampliar seus conhecimentos.</p>
+            </li>
+        </ul>
+    </section>
+</main>
+
+{%endblock%}

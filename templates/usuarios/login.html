@@ -1,0 +1,19 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+<div class="Tela">
+    <main>
+		<h2>Bem vindo ao Carteira Amiga</h2>
+		<p>Nossa missão é ajudar você a programar sua vida financeira.</p>
+		<form method="post" class="form">
+			{% csrf_token %}
+    		{{form.as_p}}
+			<div class="lreg">
+				<input type="submit" value="Login" class="button">
+				<p>Caso não tenha um login <a href="{% url 'cadastro' %}">Registre-se</a>
+			</div>
+		</form>
+	</main>
+</div>
+
+{% endblock %}

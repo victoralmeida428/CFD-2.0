@@ -1,0 +1,163 @@
+:root{
+    font-size: 14px;
+    background-image: linear-gradient(to right,rgb(170, 170, 170), rgb(176, 199, 199));
+    font-family: 'Nunito', sans-serif;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 18px;
+    text-align: justify;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: 25% auto auto;
+}
+.menu ul {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-around;
+}
+.menu ul li {
+    list-style: none;
+    font-size: 2rem;
+}
+.menu ul li a{
+    color: black;
+    text-decoration: none;
+}
+
+.menu ul li a:hover{
+    color: black;
+    text-decoration: underline;
+    border-left: 10px solid rgb(90, 90, 90);
+    padding-left: 10px;
+    transition-duration: 300ms;
+}
+li {
+    list-style: none;
+    font-size: 18px;
+}
+/* Define o estilo do conteúdo principal */
+main {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+.Tela {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+main {
+    text-align: center;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+}
+
+.lreg{
+    width: 30vw;
+}
+
+.errorlist{
+    list-style: none;
+    color: #571e15;
+    background-color: #edd4d4;
+    border-color: #edd4d4;
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: .25rem;  
+}
+
+.alerta_sucesso{
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: .25rem;  
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    align-items: center;
+}
+
+input {
+    height: 5vh;
+    width: 20vw;
+}
+.button {
+    width: 10vw;
+}
+select {
+    height: 5vh;
+    width: 20vw;
+}
+.about{
+    position: relative;
+    width: 95vw;
+    height: fit-content;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    overflow-y: scroll;
+}
+
+.about p{
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.colaboradores {
+    text-align: left;
+    margin-left: 35vw;
+}
+
+.logo-footer{
+    display: inline;
+    width: 20px;
+    height: 20px;
+}

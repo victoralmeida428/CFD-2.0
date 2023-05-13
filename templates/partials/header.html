@@ -1,0 +1,19 @@
+{% load static %}
+<div class="header">
+    <header>
+
+        <h2>CFD - Carteira Financeira Digital</h2>
+    </header>
+    <nav class="menu">
+        <ul>
+            <li><a href="{%url 'index'%}">Home</a></li>
+            <li><a href="{%url 'about'%}">Sobre Nós</a></li>
+            {% if user.is_authenticated %} 
+            <li><a href="#">Carteira</a></li>
+            <li><a href="{%url 'logout'%}">Sair</a></li>
+            {% else %}
+            <li><a href="{%url 'login'%}">Login</a></li>
+            {%endif%}
+        </ul>
+    </nav>
+</div>
