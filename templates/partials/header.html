@@ -9,7 +9,15 @@
             <li><a href="{%url 'index'%}">Home</a></li>
             <li><a href="{%url 'about'%}">Sobre Nós</a></li>
             {% if user.is_authenticated %} 
-            <li><a href="#">Carteira</a></li>
+            <li id="carteira">Carteira
+                <div class="carteira">
+                    <ul class="carteira-lista">
+                        <li class="carteira-item"><a href="{%url 'cadastro'%}">Cadastrar Carteira</a></li>
+                        <li class="carteira-item"><a href="{%url 'cadastro'%}">Painel</a></li>
+                        <li class="carteira-item">Balanço</li>
+                        <li class="carteira-item">Investimento</li>
+                    </ul>
+            </li>
             <li><a href="{%url 'logout'%}">Sair</a></li>
             {% else %}
             <li><a href="{%url 'login'%}">Login</a></li>
@@ -17,3 +25,4 @@
         </ul>
     </nav>
 </div>
+<script src="{%static 'Assets/js/menu.js'%}"></script>

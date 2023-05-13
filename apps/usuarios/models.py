@@ -14,5 +14,6 @@ class Usuarios(models.Model):
     email = models.EmailField(blank=False, null=False, unique=True)
     sexo = models.CharField(choices=SEXO_CHOICES, max_length=20)
     nascimento = models.DateField(blank=False, null=False)
+    salario = models.FloatField()
     
     
