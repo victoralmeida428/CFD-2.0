@@ -2,6 +2,11 @@
     font-size: 14px;
     background-image: linear-gradient(to right,rgb(170, 170, 170), rgb(176, 199, 199));
     font-family: 'Nunito', sans-serif;
+    --cor-menu: white;
+}
+*{
+    margin: 0px;
+    padding: 0px
 }
 
 h1, h2, h3 {
@@ -25,69 +30,179 @@ p {
     text-align: justify;
 }
 
+/*HEADER AND MENU*/
 .header{
     display: grid;
     grid-template-columns: 25% auto auto;
     background-image: linear-gradient(to right,rgb(45, 35, 100),rgb(54, 43, 206));
     color: aliceblue;
-}
-.menu ul {
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    justify-content: space-around;
-}
-.menu ul li {
-    list-style: none;
-    font-size: 2rem;
-}
-.menu ul li a{
-    color: aliceblue;
-    text-decoration: none;
+    padding: 5vh;
+    max-width: 98vw;  
+    
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.507);
 }
 
-.menu ul li a:hover{
-    color: aliceblue;
-    text-decoration: underline;
-    border-left: 10px solid aliceblue;
-    padding-left: 10px;
-    transition-duration: 300ms;
-}
-li {
-    list-style: none;
-    font-size: 18px;
-}
-
-.menu ul li:hover{
-    cursor: pointer;
-    color: aliceblue;
-
-}
-
-.carteira ul{
-    display: none;
-    float: left;
-}
-
-
-.carteira.ativo ul{
+nav{
     display: block;
+    margin-left: 50%;
+    text-align: center;
+    
 }
-/* Define o estilo do conteúdo principal */
+    nav ul{
+        list-style-type: none;
+        padding: 2px;
+        position: absolute;
+        font-weight: bold;
+        text-align: justify;
+    }
+    nav a{
+        position: relative;
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+    }
+    nav ul li{
+        display: inline-block;
+        font-size: 1.2em;
+    }
+    nav ul li a{
+        color: var(--cor-menu);
+        text-decoration: none;
+        font-size: 1.2em;
+        padding: 10px; 
+        display: inline-block; 
+        border-radius: 10px;       
+    }
+    nav ul li a:hover{
+       color: lightgreen;
+       background-color: rgb(54, 43, 206);
+       transition-duration: 0.2s;
+    
+    }
+    nav ul ul{
+        display: none;        
+    }
+    nav ul ul li a{
+        display: block;
+    }
+    nav ul #carteira:hover ul{
+        color: lightgreen;
+        display: block;
+        padding: 2px;
+        margin: 0px;
+        font-size: 0.8em;
+        background-color: rgb(54, 43, 206);
+        transition-duration: 0.2s;
+        border-radius: 10px;
+    } 
+    
+.header>header>h2{
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Main Content - Home (FILE INDEX.HTML)*/
 main {
-	max-width: 800px;
+	max-width: 70vw;
 	margin: 0 auto;
-	padding: 20px;
+	padding: 2vw;
+    border-radius: 0px 0px 10px 10px;
+    margin-bottom: 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: justify;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.473);
 }
+    main li{
+        list-style-type: none;
+    }
+    main h2{
+        padding-bottom: 0.9vh;
+        text-align: center;   
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.452);   
+    }
+    main p{
+        text-indent: 1vw;
+        text-align: justify;
+        padding: 0px;
+    }
+    main .sobre{
+        padding-bottom: 1vh;
+    }
+
+    main .features ul{
+        text-align: center;
+        padding-bottom: 0.8vh;
+        margin-bottom: 15px;
+    }
+    main .features ul li{
+        font-size: 1.1em;
+        padding: 2px;
+        list-style-type: square;
+        list-style-position: inside;
+    }
+    main .dicas ul li h3{
+        padding: 0.7vh;
+        text-align: center;
+    }
+    main .dicas ul li p{
+        text-align: justify;
+        margin-bottom: 1.2vh;
+    }
+
+
+/*About content*/
+.about{
+    background-color: white;  
+    max-width: 70vw;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 0px 0px 10px 10px;
+}
+    .about h1{
+        padding-bottom: 0.9vh;
+        text-align: center;   
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.452);padding-top: 1vh;        
+    }
+    .about p{
+        text-align: justify;
+        width: 50vw;
+        text-indent: 1vw;
+        margin-left: 10vw;
+        margin-bottom: 5vh; 
+    }
+
+.colaboradores{
+    margin: 2vw;
+    padding-bottom: 5vh;    
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.452);
+}    
+    .colaboradores ul{
+        list-style-type: none;
+        /*padding-left: 10vw;*/           
+    }
+    .colaboradores ul li{
+        text-align: center;
+        margin: 1vh;
+        text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.452);
+        display: relative;
+        font-weight: bold;    
+    }
+       
+
+
+/* Footer content*/
+footer{
+    background-image: linear-gradient(to right,rgb(45, 35, 100),rgb(54, 43, 206));
+    color: white;
+    text-align: center;
+}
+    footer p{
+        text-align: center;
+    }
+
 .Tela {
     display: flex;
     justify-content: center;
     align-items: center;
 
-}
-
-main {
-    text-align: center;
 }
 
 .login{
@@ -99,6 +214,8 @@ main {
 .lreg{
     width: 30vw;
 }
+
+
 
 .errorlist{
     list-style: none;
@@ -152,30 +269,17 @@ select {
     height: 5vh;
     width: 20vw;
 }
-.about{
-    position: relative;
-    width: 95vw;
-    height: fit-content;
-    opacity: 1;
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    overflow-y: scroll;
-}
 
-.about p{
-    text-align: center;
-    width: 50%;
-    margin-left: 25%;
-}
 
-.colaboradores {
-    text-align: left;
-    margin-left: 35vw;
-}
 
-.logo-footer{
-    display: inline;
-    width: 20px;
-    height: 20px;
+.sobre{
+    margin: 10px;
+    padding-bottom: 20px;
 }
+    .sobre a{
+        text-decoration: none;
+        color: blue;
+    }
+        .sobre a:hover{
+            text-decoration: underline;
+        }

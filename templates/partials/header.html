@@ -3,20 +3,21 @@
     <header>
 
         <h2>CFD - Carteira Financeira Digital</h2>
+
     </header>
+
     <nav class="menu">
         <ul>
             <li><a href="{%url 'index'%}">Home</a></li>
             <li><a href="{%url 'about'%}">Sobre Nós</a></li>
             {% if user.is_authenticated %} 
-            <li id="carteira">Carteira
-                <div class="carteira">
+            <li id="carteira"><a href="#">Carteira</a></a>                
                     <ul class="carteira-lista">
                         <li class="carteira-item"><a href="{%url 'cadastro'%}">Cadastrar Carteira</a></li>
                         <li class="carteira-item"><a href="{%url 'cadastro'%}">Painel</a></li>
-                        <li class="carteira-item">Balanço</li>
-                        <li class="carteira-item">Investimento</li>
-                    </ul>
+                        <li class="carteira-item"><a href="#">Balanço</a></li>
+                        <li class="carteira-item"><a href="#">Investimento</a></li>
+                    </ul>                
             </li>
             <li><a href="{%url 'logout'%}">Sair</a></li>
             {% else %}
@@ -24,5 +25,6 @@
             {%endif%}
         </ul>
     </nav>
+
 </div>
 <script src="{%static 'Assets/js/menu.js'%}"></script>
