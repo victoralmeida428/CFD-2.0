@@ -1,23 +1,21 @@
 {% load static %}
-<div class="header">
-    <header>
+<header class="header">
 
-        <h2>CFD - Carteira Financeira Digital</h2>
-
-    </header>
-
+    <h2>CFD - Carteira Financeira Digital</h2>
     <nav class="menu">
         <ul>
             <li><a href="{%url 'index'%}">Home</a></li>
             <li><a href="{%url 'about'%}">Sobre Nós</a></li>
             {% if user.is_authenticated %} 
-            <li id="carteira"><a href="#">Carteira</a></a>                
+            <li id="carteira"> <a href=#>Carteira</a>
+                <div class="carteira">
                     <ul class="carteira-lista">
-                        <li class="carteira-item"><a href="{%url 'cadastro'%}">Cadastrar Carteira</a></li>
-                        <li class="carteira-item"><a href="{%url 'cadastro'%}">Painel</a></li>
-                        <li class="carteira-item"><a href="#">Balanço</a></li>
+                        <li class="carteira-item"><a href="{%url 'dash'%}">Painel</a></li>
+                        <li class="carteira-item"><a href="#">Extra</a></li>
+                        <li class="carteira-item"><a href="{%url 'despesa'%}">Despesas</a></li>
                         <li class="carteira-item"><a href="#">Investimento</a></li>
-                    </ul>                
+                    </ul>
+                </div>
             </li>
             <li><a href="{%url 'logout'%}">Sair</a></li>
             {% else %}
@@ -25,6 +23,6 @@
             {%endif%}
         </ul>
     </nav>
-
-</div>
+</header>
+ 
 <script src="{%static 'Assets/js/menu.js'%}"></script>
