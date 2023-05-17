@@ -32,10 +32,6 @@ def dash(request):
     user = request.user
     carteira = Carteira.objects.filter(user=user).values()
     df = pd.DataFrame(carteira)
-    def gasto(df):
-        df = df.groupby('categoria').sum(numeric_only=True).reset_index()
-        fig = px.bar(df, x='categoria', y='despesa', color='categoria', text_auto=True)
-        return fig
     app = DjangoDash('carteira', add_bootstrap_links=True)
     app.css.append_css({"external_url": "/static/styles/style.css"})
     app.layout = html.Div(
@@ -44,17 +40,28 @@ def dash(request):
                                             dbc.Container(id='filters', children=[
                                                         dbc.Row([
                                                             dbc.Col(dcc.DatePickerRange(id='datarange', start_date=dt.date(2023,4,1),
-                                                                                        end_date=dt.datetime.now()), md=4)
+                                                                                        end_date=dt.datetime.now()), md=4),
+                                                            dcc.Dropdown(list(df.categoria.unique()), list(df.categoria.unique())[0],
+                                                                         id='categoria', style={'width':'30vw'}, multi=True)
                                                         ])])
                                     ]),            
-                        dcc.Graph(id='graficogasto', figure=gasto(df))
+                        dcc.Graph(id='graficogasto')
             ])
     
-    # @app.callback(Output('graficogasto','figure'))
-    # def gasto():
-    #     print(df)
-    #     fig = px.bar(df, x='categoria', y='despesa')
-    #     return fig
+    @app.callback(Output('graficogasto', 'figure'),
+                  Input('categoria', 'value'))
+    def gasto(categoria):
+        user = request.user
+        carteira = Carteira.objects.filter(user=user).values()
+        df = pd.DataFrame(carteira)
+        df = df.groupby('categoria').sum(numeric_only=True).reset_index()
+        if isinstance(categoria, list):
+            df = df.loc[df.categoria.isin(categoria)]
+        else:
+            df = df.loc[df.categoria==categoria]
+        fig = px.bar(df, x='categoria', y='despesa', color='categoria',
+                     labels={'categoria':''}, text_auto=True)
+        return fig
 
     salario = Usuarios.objects.filter(login=user).values('salario')
     nome = Usuarios.objects.filter(login=user).values('nome')
