@@ -1,0 +1,16 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+{%load plotly_dash%}
+<div class="saudacao">
+    <h2>Bem-vindo, {{login}}</h2>
+    <p>Caixa: R$ {{salario}}</p>
+</div>
+<div class="dash">
+<div class="{% plotly_class name='carteira' %} card" >
+    {% plotly_app name='carteira' ratio=0.75 %}
+</div>
+</div>
+
+
+{% endblock %}
