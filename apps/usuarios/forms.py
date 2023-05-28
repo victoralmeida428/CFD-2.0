@@ -68,6 +68,6 @@ class Login(forms.Form):
             if senha!=password:
                 raise forms.ValidationError('Senha Inválida')
         except:
-            return senha
+            raise forms.ValidationError('Senha Inválida')
         return senha
         

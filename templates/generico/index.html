@@ -5,7 +5,9 @@
     <section class="sobre">
         <h2>Sobre o projeto</h2>
         <p>O Controle Financeiro é uma plataforma online que permite a seus usuários controlar suas finanças de forma fácil e intuitiva. Com ferramentas de monitoramento de receitas e despesas, investimentos e metas financeiras, o Controle Financeiro ajuda você a tomar decisões mais inteligentes sobre seu dinheiro.
+        {% if not user.is_authenticated %}
         <a href="{%url 'cadastro'%}" class="botao">Crie sua conta agora mesmo.</a>
+        {%endif%}
         </p>
     </section>
     <section class="features">

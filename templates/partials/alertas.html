@@ -1,6 +1,6 @@
 {% load static %}
 {% for alerta in messages%}
-    <div class="alert alert-{{alerta.tags}}" role="alert", style="text-align: center; margin: 0 25% 0 25%;">
+    <div class="alert alert_{{alerta.tags}}" role="alert", style="text-align: center; margin: 0 25% 0 25%;">
         {{alerta}}
     </div>
 {%endfor%}

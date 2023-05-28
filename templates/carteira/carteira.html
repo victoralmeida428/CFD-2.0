@@ -4,13 +4,21 @@
 {%load plotly_dash%}
 <div class="saudacao">
     <h2>Bem-vindo, {{login}}</h2>
-    <p>Caixa: R$ {{salario}}</p>
+    <p>Caixa: <span class="salario">R$  {{salario}}</span></p>
 </div>
+
 <div class="dash">
 <div class="{% plotly_class name='carteira' %} card" >
+{% if validacao %}
     {% plotly_app name='carteira' ratio=0.75 %}
+{% else %}
+    <div class="Aviso">
+        <p>Cadastre suas despesas <a href="{% url 'despesa' %}"> aqui</a></p>
+    </div>
+{% endif %}
 </div>
 </div>
+
 
 
 {% endblock %}

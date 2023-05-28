@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+
 class Carteira(models.Model):
     despesa = models.FloatField(max_length=20)
     categoria = models.CharField(max_length=20)
@@ -9,4 +10,6 @@ class Carteira(models.Model):
 class Conta(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     conta = models.FloatField(max_length=20)
+    
+
 

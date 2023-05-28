@@ -96,6 +96,7 @@ nav{
         background-color: rgb(54, 43, 206);
         transition-duration: 0.2s;
         border-radius: 10px;
+        z-index: 10000;
     } 
     
 .header>header>h2{
@@ -132,9 +133,10 @@ main {
     }
 
     main .features ul{
-        text-align: center;
+        text-align: left;
         padding-bottom: 0.8vh;
         margin-bottom: 15px;
+        margin-left: 10vw;
     }
     main .features ul li{
         font-size: 1.1em;
@@ -237,7 +239,7 @@ footer{
     border-radius: .25rem;  
 }
 
-.alerta_sucesso{
+.alert_success{
     color: #155724;
     background-color: #d4edda;
     border-color: #c3e6cb;
@@ -249,7 +251,8 @@ footer{
     border-right-color: transparent;
     border-bottom-color: transparent;
     border-left-color: transparent;
-    border-radius: .25rem;  
+    border-radius: .25rem;
+    z-index: 1;
 }
 
 form {
@@ -308,4 +311,39 @@ select {
 
 .dash{
     margin-top: 20px;
+}
+
+input {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.saudacao h2, .saudacao p {
+    text-shadow: 2px 2px rgb(152, 161, 243);
+    color: rgb(45, 35, 100);
+}
+
+.saudacao p {
+    text-align: center;
+}
+
+.salario {
+    border: solid rgb(45, 35, 100) 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+
+.Aviso p{
+    font-size: 20px;
+    text-align: center;
+    color: rgb(45, 35, 100);
+    border: rebeccapurple solid 1px;
+    border-radius: 10px;
+    width: 25vw;
+}
+.Aviso {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
